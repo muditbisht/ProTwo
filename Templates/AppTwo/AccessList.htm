@@ -1,0 +1,22 @@
+{% extends "AppTwo/Base.htm" %}
+{% block body_block%}
+{% if record%}
+	<h1>List of all Access Record</h1>
+	<table>
+		<td>
+      	<table>
+			<thead>
+				<th>Name</th>
+				<th>Date</th>
+			</thead>        
+			{% for inst in record %}
+			<tr>
+				<td>{{ inst.name }}</td>
+				<td>{{ inst.date }}</td>
+			</tr>
+			{% endfor %}
+	{% else %}
+	<h1>No record for Webpage.</h1>
+	{% endif %}
+{% endblock %}
+		

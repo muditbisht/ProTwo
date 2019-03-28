@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+{% load staticfiles %}
+
+        <link rel="stylesheet" href="{% static "Styles/StyleSheet1.css" %}">
+    </head>
+    <body>
+        <h1>Help</h1>
+        <p>Groot is here for your help</p>
+        <img src="{% static "Images/Groot.jpg" %}" alt="This is help">
+{% endblock %}
+    

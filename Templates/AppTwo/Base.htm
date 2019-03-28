@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+        {%load staticfiles%}
+        <link rel="stylesheet" href="{% static 'Styles/StyleSheet1.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>Name</title>
+    
+</head>
+<body>
+<!--     
+    <nav class="navbar navbar-default navbar-static-top">
+         <div class="container">       
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="#">Index</a></li>
+                <li><a class="navbar-link" href="#">Index</a></li>
+                <li><a class="navbar-link" href="#">Index</a></li>
+            </ul>
+        </div>
+    </nav> -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="{% url 'AppTwo:index' %}" {% if Name == "Index" %} class="nav-link active" {% else %} class="nav-link"{% endif %}>Index</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'AppTwo:help'%}" {% if Name == "Help" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Help</a>
+        </li>
+        <li class="nav-item">
+            <a href="{% url 'AppTwo:form' %}" {% if Name == "Form" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Form</a>
+        </li>
+        <li class="nav-item">
+                <a href="{% url 'AppTwo:topics'%}" {% if Name == "Topic_List" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Topics</a>
+        </li>
+        <li class="nav-item">
+                <a href="{% url 'AppTwo:web'%}" {% if Name == "web_list" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Websites</a>
+        </li>
+        <li class="nav-item">
+                <a href="{% url 'AppTwo:access'%}" {% if Name == "Access_List" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Access List</a>
+        </li>
+        <li class="nav-item">
+                <a href="{% url 'AppTwo:web_form'%}" {% if Name == "WebForm" %} class="nav-link active" {% else %} class="nav-link" {% endif %}>WebForm</a>
+        </li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                          Dropdown link
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'AppTwo:index' %}">Index</a>
+                    <a class="dropdown-item" href="{% url 'AppTwo:help' %}">Help</a>
+                    <a class="dropdown-item" href="{% url 'AppTwo:form' %}">Form</a>
+                </div>
+            </li>
+    </ul>
+    </div>
+    <div class="container">
+        {% block body_block %}
+    <!-- Anything outside of this will be inherited if we extend -->
+        {% endblock %}
+    
+    
+</body>
+</html> 

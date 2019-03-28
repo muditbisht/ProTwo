@@ -1,0 +1,15 @@
+h1{
+    color: red;
+}
+img{
+    height: 400px;
+
+}
+table,td,th{
+    background-color: azure;
+    row-gap: 4px;
+    border: 2px solid black;
+}
+th{
+    color : orangered;
+}

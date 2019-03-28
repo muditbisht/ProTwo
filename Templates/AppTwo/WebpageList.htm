@@ -1,0 +1,24 @@
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+{% if record%}
+<h1>List of all Webpages</h1>
+<table>
+	<td>
+    	<table>
+		<thead>
+			<th>Topic</th>
+			<th>Name</th>
+			<th>URL</th>
+		</thead>        
+		{% for inst in record %}
+		<tr>
+			<td>{{ inst.topic }}</td>
+			<td>{{ inst.name }}</td>
+			<td><a href="{{ inst.url }}" >{{ inst.url }}</a></td>
+		</tr>
+		{% endfor %}
+{% else %}
+<h1>No record for Webpage.</h1>
+{% endif %}
+{% endblock %}
+    

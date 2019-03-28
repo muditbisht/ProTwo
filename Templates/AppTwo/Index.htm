@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+        <h1>State Wise</h1>
+        <br>
+        <table border="1">
+            <caption>Random City</caption>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+            </tr>
+            {% for s in States %}
+            <tr>
+                <td>{{ s.state }}</td>
+                <td>{{ s.code }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+{% endblock %}    

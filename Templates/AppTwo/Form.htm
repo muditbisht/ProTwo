@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+        <h1>Fill the form</h1>
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="submit">
+        </form>
+        <a href="{%url 'in' %}">Index</a>
+{% endblock %}

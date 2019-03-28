@@ -1,0 +1,13 @@
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+{%if record%}
+<h1>Record for topic list - </h1>
+	<ol type="1">
+    {% for top in record %}
+    <li>{{ top.topic }}</li>
+    {% endfor %}
+</ol>
+{% else %}
+    <p>Record Not Found.</p>
+{% endif %}
+{% endblock %}

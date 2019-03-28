@@ -1,0 +1,9 @@
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+<form method="POST">
+	{{form.as_p}}
+	{% csrf_token %}
+	<input type="submit" name="Submit">	
+</form>
+{% endblock %}
+
