@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "AppTwo/Base.htm" %}
+{% block body_block %}
+{%load staticfiles %}
+<div class="card" style="background-color:#5f9ea0; border-color:darkblue;">
+  <img class="card-img-top" src="{{Image | random}}" alt="Image">
+  <div class="card-body">
+    <h4 class="card-title">Title</h4>
+    <p class="card-text">{{ text }}</p>
+  </div>
+</div>
+{% endblock %}

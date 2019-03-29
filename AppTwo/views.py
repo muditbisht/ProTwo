@@ -6,6 +6,7 @@ from AppTwo.Forms import User_Forms,web_form
 from json import loads
 from time import sleep
 from os import path
+from faker import Faker
 
 
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
@@ -14,8 +15,15 @@ State_DIR=loads(open(file).read())
 
 
 
+Images=['Star-Lord.jpg','Groot.jpg','IronMan.jpg','StarLord.jpg']
+Images=list(map(lambda x:path.join('static','Images',x),Images))
+# i=randint(0,3)
+# Image=path.join('Images',Images[i])
+
 def non(request):
-	return HttpResponse("Doesn't Exist")
+	X=Faker()
+	text=X.text()
+	return render(request,'Non.htm',context={'text':text,'Name':'non','Image':Images})
 def index(request):
 	Q=[]
 	for _ in range(10):

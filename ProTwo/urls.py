@@ -21,6 +21,6 @@ app_name='ProTwo'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',views.index,name='in'),
+    url(r'^$',views.non,name='in'),
     url(r'^AppTwo/',include('AppTwo.urls')),
 ]

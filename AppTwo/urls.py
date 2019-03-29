@@ -11,4 +11,5 @@ urlpatterns=[
     url(r'^WebpageList/',views.Webpage_list,name="web"),
     url(r'^AccessList/',views.AccessRecord_list,name="access"),
     url(r'^webform/',views.webForm,name="web_form"),
+    
 ]
