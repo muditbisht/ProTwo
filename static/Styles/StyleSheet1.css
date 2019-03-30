@@ -1,8 +1,8 @@
 h1{
     color: red;
 }
- img{
-    height: 40px;
+.img-height{
+    height: 400px;
 
 } 
 table,td,th{
