@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 {% extends "Users/Base.htm" %}
 {% block  body_block %}
-    <h1>Django Users page</h1>
+    {% if user.is_authenticated %}
+    <h1>Hello, {{user.username}}</h1>
+    {% else %}
+    <h1>Login or Register using above links</h1>
+    {% endif %}
 {% endblock  %}
