@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',views.non,name='in'),
     url(r'^AppTwo/',include('AppTwo.urls')),
+    url(r'^User/',include('Users.urls')),
 ]

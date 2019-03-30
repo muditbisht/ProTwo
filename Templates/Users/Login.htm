@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "Users/Base.htm" %}
+{% block  body_block %}
+    <div class="jumbotron">
+        <h1 class="display-4">LOGIN</h1>
+        
+        <hr class="my-4">
+        <form action="{% url 'Users:user_login' %" method="post">
+            {% csrf_token %}
+            <label for="username">Username </label>
+            <input type="text" name="username" placeholder="Enter Username">
+            <br>
+            <label for="password" >Password </label>
+            <input type="password" name="password">
+            <br>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+{% endblock  %}

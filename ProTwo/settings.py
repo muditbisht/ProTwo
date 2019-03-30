@@ -19,6 +19,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,"Templates")
 
 STATIC_DIR = os.path.join(BASE_DIR,"static")
 
+MEDIA_DIR = os.path.join(BASE_DIR,"media")
+
 # print(STATIC_DIR)
 # print(BASE_DIR)
 # print(TEMPLATE_DIR)
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AppTwo',
+    'Users'
 ]
 
 MIDDLEWARE = [
@@ -87,10 +90,17 @@ DATABASES = {
     }
 }
 
-
+#Password hashers ->
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    ]
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
+# Passord Validators ->
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -128,3 +138,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
+#   For Media directory and files   ->
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
+
+LOGIN_URL = '/Users/user_login'
