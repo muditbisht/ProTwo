@@ -11,8 +11,23 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 
 
+def picture(request):
+	cur_user = request.user
+	pic='/media/profile_pic/noimage.jpg'
+	if cur_user:
+		print(cur_user)
+		try :
+			pic=cur_user.userprofileinfo.picture.url
+			print(pic)
+			return pic
+		except:
+			pass			
+	return pic
+	
+
 def index(request):
-	return render(request,'Users/index.htm')
+	print(request.user,picture(request))
+	return render(request,'Users/index.htm',context={'picture' : picture(request)})
 
 def register(request):
 	registered = False
@@ -67,6 +82,7 @@ def user_login(request):
 
 @login_required
 def user_logout(request):
+	print(request.user,picture(request))
 	logout(request)
 	return render(request,'Users/index.htm')
 

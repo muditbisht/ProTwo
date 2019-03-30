@@ -7,6 +7,7 @@ from json import loads
 from time import sleep
 from os import path
 from faker import Faker
+from Users.views import picture
 
 
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
@@ -23,8 +24,10 @@ Images=list(map(lambda x:path.join('static','Images',x),Images))
 def non(request):
 	X=Faker()
 	text=X.text()
+	print(request.user,picture(request))
 	return render(request,'Non.htm',context={'text':text,'Name':'non','Image':Images})
 def index(request):
+	print(request.user,picture(request))
 	Q=[]
 	for _ in range(10):
 		i=randint(0,len(State_DIR)-1)
@@ -37,24 +40,27 @@ def index(request):
 	my_dict={'States' : States,'Name':'Index'}
 	return  render(request,'AppTwo/Index.htm',context=my_dict)
 def help(request):
-	
+	print(request.user,picture(request))
 	return render(request,'AppTwo/help.htm',context={'Name':'Help'})
 
 def Topic_list(request):
+	print(request.user,picture(request))
 	topic_list=Topic.objects.order_by('topic')
 	topic_list={'record' : topic_list,'Name':'Topic_List'}
 	return render(request,'AppTwo/TopicList.htm',context=topic_list)
 
 def Webpage_list(request):
+	print(request.user,picture(request))
 	web_list = {'record' : Webpage.objects.order_by('name'),'Name':'web_list'}
 	return render(request,'AppTwo/WebpageList.htm',context=web_list)
 
 def AccessRecord_list(request):
+	print(request.user,picture(request))
 	acc_list={'record' : AccessRecord.objects.order_by('name'),'Name': 'Access_List'}
 	return render(request,'AppTwo/AccessList.htm',context=acc_list)
 def form_view(request):
 	form = User_Forms()
-	
+	print(request.user,picture(request))
 	if request.method == 'POST':
 		form = User_Forms(request.POST)
 		if form.is_valid():
@@ -66,7 +72,7 @@ def form_view(request):
 
 def webForm(request):
 	form = web_form()
-	
+	print(request.user,picture(request))
 	if request.method == 'POST':
 		form = web_form(request.POST)
 		if form.is_valid():
