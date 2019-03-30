@@ -1,10 +1,10 @@
 h1{
     color: red;
 }
-img{
-    height: 400px;
+ img{
+    height: 40px;
 
-}
+} 
 table,td,th{
     background-color: azure;
     row-gap: 4px;
