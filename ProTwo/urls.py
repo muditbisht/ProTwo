@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url,include
 from AppTwo import views
+from . import settings
+from django.contrib.staticfiles.urls import static
 
 app_name='ProTwo'
 
@@ -24,4 +26,4 @@ urlpatterns = [
     url(r'^$',views.non,name='in'),
     url(r'^AppTwo/',include('AppTwo.urls')),
     url(r'^User/',include('Users.urls')),
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

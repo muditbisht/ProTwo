@@ -16,16 +16,11 @@ State_DIR=loads(open(file).read())
 
 
 
-Images=['Star-Lord.jpg','Groot.jpg','IronMan.jpg','StarLord.jpg']
-Images=list(map(lambda x:path.join('static','Images',x),Images))
-# i=randint(0,3)
-# Image=path.join('Images',Images[i])
-
 def non(request):
 	X=Faker()
 	text=X.text()
 	print(request.user,picture(request))
-	return render(request,'Non.htm',context={'text':text,'Name':'non','Image':Images})
+	return render(request,'Non.htm',context={'text':text,'Name':'non','Image':picture(request)})
 def index(request):
 	print(request.user,picture(request))
 	Q=[]
